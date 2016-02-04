@@ -1,0 +1,561 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM        04/Feb/2016  09:22:45
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\src\cpu\sysinit.c
+#    Command line =  
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\src\cpu\sysinit.c" -D IAR -D FREEDOM -lCN
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\" -lB
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\" -o
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.2\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\projects\hello_world\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\common\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu\" -I
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu\headers\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\llwu\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\lptmr\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\mcg\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\pmc\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rcm\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rtc\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\smc\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\uart\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\wdog\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\cmp\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\platforms\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\" -Ol
+#    List file    =  
+#        C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\sysinit.lst
+#    Object file  =  
+#        C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\sysinit.o
+#
+###############################################################################
+
+C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\cpu\sysinit.c
+      1          /*
+      2           * File:        sysinit.c
+      3           * Purpose:     Kinetis L Family Configuration
+      4           *              Initializes processor to a default state
+      5           *
+      6           * Notes:
+      7           *
+      8           *
+      9           */
+     10          
+     11          #include "common.h"
+     12          #include "sysinit.h"
+     13          #include "UART.h"
+     14          
+     15          /********************************************************************/
+     16          
+     17          /* System clock frequency variables - Represents the current system clock
+     18           * settings
+     19           */
+
+   \                                 In section .bss, align 4
+     20          int mcg_clk_hz;
+   \                     mcg_clk_hz:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     21          int mcg_clk_khz;
+   \                     mcg_clk_khz:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     22          int core_clk_khz;
+   \                     core_clk_khz:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     23          int periph_clk_khz;
+   \                     periph_clk_khz:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     24          int pll_clk_khz;
+   \                     pll_clk_khz:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     25          int uart0_clk_khz;
+   \                     uart0_clk_khz:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     26          uint32 uart0_clk_hz;
+   \                     uart0_clk_hz:
+   \   00000000                      DS8 4
+     27          extern uint32_t SystemCoreClock;
+     28          
+     29          
+     30          
+     31          /********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+     32          void sysinit (void)
+     33          {
+   \                     sysinit: (+1)
+   \   00000000   0xB500             PUSH     {LR}
+   \   00000002   0xB083             SUB      SP,SP,#+12
+     34                  /* Enable all of the port clocks. These have to be enabled to configure
+     35                   * pin muxing options, so most code will need all of these on anyway.
+     36                   */
+     37                  SIM_SCGC5 |= (SIM_SCGC5_PORTA_MASK
+     38                                | SIM_SCGC5_PORTB_MASK
+     39                                | SIM_SCGC5_PORTC_MASK
+     40                                | SIM_SCGC5_PORTD_MASK
+     41                                | SIM_SCGC5_PORTE_MASK );
+   \   00000004   0x....             LDR      R0,??DataTable2  ;; 0x40048038
+   \   00000006   0x6800             LDR      R0,[R0, #+0]
+   \   00000008   0x21F8             MOVS     R1,#+248
+   \   0000000A   0x0189             LSLS     R1,R1,#+6        ;; #+15872
+   \   0000000C   0x4301             ORRS     R1,R1,R0
+   \   0000000E   0x....             LDR      R0,??DataTable2  ;; 0x40048038
+   \   00000010   0x6001             STR      R1,[R0, #+0]
+     42                  
+     43                  // Release hold with ACKISO:  Only has an effect if recovering from VLLS1, VLLS2, or VLLS3
+     44                  // if ACKISO is set you must clear ackiso before calling pll_init 
+     45                  //    or pll init hangs waiting for OSC to initialize
+     46                  // if osc enabled in low power modes - enable it first before ack
+     47                  // if I/O needs to be maintained without glitches enable outputs and modules first before ack.
+     48                  if (PMC_REGSC &  PMC_REGSC_ACKISO_MASK)
+   \   00000012   0x....             LDR      R0,??DataTable2_1  ;; 0x4007d002
+   \   00000014   0x7800             LDRB     R0,[R0, #+0]
+   \   00000016   0x0700             LSLS     R0,R0,#+28
+   \   00000018   0xD505             BPL      ??sysinit_0
+     49                  PMC_REGSC |= PMC_REGSC_ACKISO_MASK;
+   \   0000001A   0x....             LDR      R0,??DataTable2_1  ;; 0x4007d002
+   \   0000001C   0x7800             LDRB     R0,[R0, #+0]
+   \   0000001E   0x2108             MOVS     R1,#+8
+   \   00000020   0x4301             ORRS     R1,R1,R0
+   \   00000022   0x....             LDR      R0,??DataTable2_1  ;; 0x4007d002
+   \   00000024   0x7001             STRB     R1,[R0, #+0]
+     50                  
+     51          #ifdef ENABLE_CLKOUT
+     52                  // Initialize trace clk functionality
+     53                  clk_out_init();
+     54          #endif
+     55          				
+     56          #ifndef CMSIS
+     57                 /* Ramp up the system clock */
+     58                 /* Set the system dividers */
+     59                 /* NOTE: The PLL init will not configure the system clock dividers,
+     60                  * so they must be configured appropriately before calling the PLL
+     61                  * init function to ensure that clocks remain in valid ranges.
+     62                  */  
+     63                  SIM_CLKDIV1 = ( 0
+     64                                  | SIM_CLKDIV1_OUTDIV1(OUTDIV1_VAL)
+     65                                  | SIM_CLKDIV1_OUTDIV4(OUTDIV4_VAL) );
+   \                     ??sysinit_0: (+1)
+   \   00000026   0x2080             MOVS     R0,#+128
+   \   00000028   0x0240             LSLS     R0,R0,#+9        ;; #+65536
+   \   0000002A   0x....             LDR      R1,??DataTable2_2  ;; 0x40048044
+   \   0000002C   0x6008             STR      R0,[R1, #+0]
+     66           
+     67          #if defined(NO_PLL_INIT)
+     68                  // If PLL initialization is not desired, set FLL to 48 MHz clock in default FEI mode
+     69                  // Set DMX32 and DRST_DRS values accordingly
+     70                  MCG_C4 = ((MCG_C4 & ~(MCG_C4_DRST_DRS_MASK)) | ((FLL_DMX32 << MCG_C4_DMX32_SHIFT)
+     71                                                               | (FLL_DRST_DRS << MCG_C4_DRST_DRS_SHIFT)));
+     72                  if (FLL_DMX32 == 0)
+     73                      mcg_clk_hz = 640 * (FLL_DRST_DRS + 1) * FLL_REF_FREQ;
+     74                  else 
+     75                      mcg_clk_hz = 732 * (FLL_DRST_DRS + 1) * FLL_REF_FREQ;
+     76                  
+     77                  SIM_SOPT2 &= ~SIM_SOPT2_PLLFLLSEL_MASK; // clear PLLFLLSEL to select the FLL for this clock source
+     78                  
+     79                  uart0_clk_khz = (mcg_clk_hz / 1000); // the uart0 clock frequency will equal the FLL frequency
+     80                  
+     81                  SIM_SOPT2 = ((SIM_SOPT2 & ~SIM_SOPT2_UART0SRC_MASK) | SIM_SOPT2_UART0SRC(1));
+     82                 
+     83          #else 
+     84                 /* Initialize PLL */
+     85                 /* PLL will be the source for MCG CLKOUT so the core, system, and flash clocks are derived from it */ 
+     86                 mcg_clk_hz = pll_init(CLK0_FREQ_HZ,  /* CLKIN0 frequency */
+     87                                       LOW_POWER,     /* Set the oscillator for low power mode */
+     88                                       CLK0_TYPE,     /* Crystal or canned oscillator clock input */
+     89                                       PLL0_PRDIV,    /* PLL predivider value */
+     90                                       PLL0_VDIV,     /* PLL multiplier */
+     91                                       MCGOUT);       /* Use the output from this PLL as the MCGOUT */
+   \   0000002E   0x2001             MOVS     R0,#+1
+   \   00000030   0x9001             STR      R0,[SP, #+4]
+   \   00000032   0x2018             MOVS     R0,#+24
+   \   00000034   0x9000             STR      R0,[SP, #+0]
+   \   00000036   0x2304             MOVS     R3,#+4
+   \   00000038   0x2201             MOVS     R2,#+1
+   \   0000003A   0x2100             MOVS     R1,#+0
+   \   0000003C   0x....             LDR      R0,??DataTable2_3  ;; 0x7a1200
+   \   0000003E   0x.... 0x....      BL       pll_init
+   \   00000042   0x....             LDR      R1,??DataTable2_4
+   \   00000044   0x6008             STR      R0,[R1, #+0]
+     92          														 
+     93          														 
+     94          			/* Check the value returned from pll_init() to make sure there wasn't an error */
+     95                 if (mcg_clk_hz < 0x100)
+   \   00000046   0x....             LDR      R0,??DataTable2_4
+   \   00000048   0x6800             LDR      R0,[R0, #+0]
+   \   0000004A   0x28FF             CMP      R0,#+255
+   \   0000004C   0xDC00             BGT      ??sysinit_1
+     96                   while(1);
+   \                     ??sysinit_2: (+1)
+   \   0000004E   0xE7FE             B        ??sysinit_2
+     97                 
+     98                 SIM_SOPT2 |= SIM_SOPT2_PLLFLLSEL_MASK; // set PLLFLLSEL to select the PLL for this clock source
+   \                     ??sysinit_1: (+1)
+   \   00000050   0x....             LDR      R0,??DataTable2_5  ;; 0x40048004
+   \   00000052   0x6800             LDR      R0,[R0, #+0]
+   \   00000054   0x2180             MOVS     R1,#+128
+   \   00000056   0x0249             LSLS     R1,R1,#+9        ;; #+65536
+   \   00000058   0x4301             ORRS     R1,R1,R0
+   \   0000005A   0x....             LDR      R0,??DataTable2_5  ;; 0x40048004
+   \   0000005C   0x6001             STR      R1,[R0, #+0]
+     99                 
+    100                 uart0_clk_khz = ((mcg_clk_hz / 2) / 1000); // UART0 clock frequency will equal half the PLL frequency
+   \   0000005E   0x....             LDR      R0,??DataTable2_4
+   \   00000060   0x6800             LDR      R0,[R0, #+0]
+   \   00000062   0x2102             MOVS     R1,#+2
+   \   00000064   0x.... 0x....      BL       __aeabi_idiv
+   \   00000068   0x21FA             MOVS     R1,#+250
+   \   0000006A   0x0089             LSLS     R1,R1,#+2        ;; #+1000
+   \   0000006C   0x.... 0x....      BL       __aeabi_idiv
+   \   00000070   0x....             LDR      R1,??DataTable2_6
+   \   00000072   0x6008             STR      R0,[R1, #+0]
+    101                 
+    102                 SIM_SOPT2 = ((SIM_SOPT2 & ~SIM_SOPT2_UART0SRC_MASK) | SIM_SOPT2_UART0SRC(1));
+   \   00000074   0x....             LDR      R0,??DataTable2_5  ;; 0x40048004
+   \   00000076   0x6800             LDR      R0,[R0, #+0]
+   \   00000078   0x....             LDR      R1,??DataTable2_7  ;; 0xf3ffffff
+   \   0000007A   0x4001             ANDS     R1,R1,R0
+   \   0000007C   0x2080             MOVS     R0,#+128
+   \   0000007E   0x04C0             LSLS     R0,R0,#+19       ;; #+67108864
+   \   00000080   0x4308             ORRS     R0,R0,R1
+   \   00000082   0x....             LDR      R1,??DataTable2_5  ;; 0x40048004
+   \   00000084   0x6008             STR      R0,[R1, #+0]
+    103          #endif 
+    104          			 
+    105          #else
+    106          mcg_clk_hz = SystemCoreClock;
+    107          			 
+    108          if (CLOCK_SETUP == 3)
+    109          {
+    110          	// If PLL initialization is not desired, set FLL to 48 MHz clock in default FEI mode
+    111            MCG_C4 |= (MCG_C4_DRST_DRS(1) | MCG_C4_DMX32_MASK);
+    112                  
+    113            SIM_SOPT2 &= ~SIM_SOPT2_PLLFLLSEL_MASK; // clear PLLFLLSEL to select the FLL for this clock source
+    114                  
+    115            uart0_clk_khz = (mcg_clk_hz / 1000); // the uart0 clock frequency will equal the FLL frequency
+    116                  
+    117            SIM_SOPT2 = ((SIM_SOPT2 & ~SIM_SOPT2_UART0SRC_MASK) | SIM_SOPT2_UART0SRC(1));
+    118          }
+    119          else
+    120          {      
+    121            SIM_SOPT2 |= SIM_SOPT2_PLLFLLSEL_MASK; // set PLLFLLSEL to select the PLL for this clock source
+    122              
+    123            uart0_clk_khz = ((mcg_clk_hz / 2) / 1000); // UART0 clock frequency will equal half the PLL frequency
+    124                 
+    125            SIM_SOPT2 = ((SIM_SOPT2 & ~SIM_SOPT2_UART0SRC_MASK) | SIM_SOPT2_UART0SRC(1));
+    126          }
+    127          #endif    
+    128          
+    129          	/*
+    130                   * Use the value obtained from the pll_init function to define variables
+    131          	 * for the core clock in kHz and also the peripheral clock. These
+    132          	 * variables can be used by other functions that need awareness of the
+    133          	 * system frequency.
+    134          	 */
+    135                  mcg_clk_khz = mcg_clk_hz / 1000;
+   \   00000086   0x....             LDR      R0,??DataTable2_4
+   \   00000088   0x6800             LDR      R0,[R0, #+0]
+   \   0000008A   0x21FA             MOVS     R1,#+250
+   \   0000008C   0x0089             LSLS     R1,R1,#+2        ;; #+1000
+   \   0000008E   0x.... 0x....      BL       __aeabi_idiv
+   \   00000092   0x....             LDR      R1,??DataTable2_8
+   \   00000094   0x6008             STR      R0,[R1, #+0]
+    136            	core_clk_khz = mcg_clk_khz / (((SIM_CLKDIV1 & SIM_CLKDIV1_OUTDIV1_MASK) >> 28)+ 1);
+   \   00000096   0x....             LDR      R0,??DataTable2_8
+   \   00000098   0x6800             LDR      R0,[R0, #+0]
+   \   0000009A   0x....             LDR      R1,??DataTable2_2  ;; 0x40048044
+   \   0000009C   0x6809             LDR      R1,[R1, #+0]
+   \   0000009E   0x0F09             LSRS     R1,R1,#+28
+   \   000000A0   0x1C49             ADDS     R1,R1,#+1
+   \   000000A2   0x.... 0x....      BL       __aeabi_uidiv
+   \   000000A6   0x....             LDR      R1,??DataTable2_9
+   \   000000A8   0x6008             STR      R0,[R1, #+0]
+    137                  periph_clk_khz = core_clk_khz / (((SIM_CLKDIV1 & SIM_CLKDIV1_OUTDIV4_MASK) >> 16)+ 1);
+   \   000000AA   0x....             LDR      R0,??DataTable2_9
+   \   000000AC   0x6800             LDR      R0,[R0, #+0]
+   \   000000AE   0x....             LDR      R1,??DataTable2_2  ;; 0x40048044
+   \   000000B0   0x6809             LDR      R1,[R1, #+0]
+   \   000000B2   0x0C09             LSRS     R1,R1,#+16
+   \   000000B4   0x0749             LSLS     R1,R1,#+29       ;; ZeroExtS R1,R1,#+29,#+29
+   \   000000B6   0x0F49             LSRS     R1,R1,#+29
+   \   000000B8   0x1C49             ADDS     R1,R1,#+1
+   \   000000BA   0x.... 0x....      BL       __aeabi_uidiv
+   \   000000BE   0x....             LDR      R1,??DataTable2_10
+   \   000000C0   0x6008             STR      R0,[R1, #+0]
+    138                  
+    139          #ifdef USE_ABORT_BUTTON
+    140                  /* Enable pin interrupt for the abort button - PTA4 */
+    141                  /* This pin could also be used as the NMI interrupt, but since the NMI
+    142                   * is level sensitive each button press will cause multiple interrupts.
+    143                   * Using the GPIO interrupt instead means we can configure for an edge
+    144                   * sensitive interrupt instead = one interrupt per button press.
+    145                   */
+    146                  enable_abort_button();
+    147          #endif
+    148                  
+    149                  
+    150                  /*
+    151                   * Configure the UART terminal port pins.  These definitions are 
+    152                   * defined in the platform header file.
+    153                   */
+    154                  
+    155                  PORT_PCR_REG(TERM_PIN_PORT, TERM_RX_PIN) = PORT_PCR_MUX(TERM_MUX_ALT);
+   \   000000C2   0x2080             MOVS     R0,#+128
+   \   000000C4   0x0080             LSLS     R0,R0,#+2        ;; #+512
+   \   000000C6   0x....             LDR      R1,??DataTable2_11  ;; 0x40049004
+   \   000000C8   0x6008             STR      R0,[R1, #+0]
+    156                  PORT_PCR_REG(TERM_PIN_PORT, TERM_TX_PIN) = PORT_PCR_MUX(TERM_MUX_ALT);
+   \   000000CA   0x2080             MOVS     R0,#+128
+   \   000000CC   0x0080             LSLS     R0,R0,#+2        ;; #+512
+   \   000000CE   0x....             LDR      R1,??DataTable2_12  ;; 0x40049008
+   \   000000D0   0x6008             STR      R0,[R1, #+0]
+    157                  
+    158            	/* UART0 is clocked asynchronously to the core clock, but all other UARTs are
+    159                   * clocked from the peripheral clock. So we have to determine which clock
+    160                   * to send to the UART_init function.
+    161                   */
+    162                  if (TERM_PORT_NUM == 0)
+    163                      uart0_init (UART0_BASE_PTR, uart0_clk_khz, TERMINAL_BAUD);
+   \   000000D2   0x2296             MOVS     R2,#+150
+   \   000000D4   0x01D2             LSLS     R2,R2,#+7        ;; #+19200
+   \   000000D6   0x....             LDR      R0,??DataTable2_6
+   \   000000D8   0x6801             LDR      R1,[R0, #+0]
+   \   000000DA   0x....             LDR      R0,??DataTable2_13  ;; 0x4006a000
+   \   000000DC   0x.... 0x....      BL       uart0_init
+    164                  else if (TERM_PORT_NUM == 1)
+    165            	    uart_init (UART1_BASE_PTR, periph_clk_khz, TERMINAL_BAUD);
+    166                  else if (TERM_PORT_NUM == 2)
+    167                      uart_init (UART2_BASE_PTR, periph_clk_khz, TERMINAL_BAUD);
+    168                  else
+    169                    while(1);
+    170          }
+   \   000000E0   0xBD07             POP      {R0-R2,PC}       ;; return
+    171          /********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    172          void enable_abort_button(void)
+    173          {
+   \                     enable_abort_button: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+    174              /* Configure the PTA4 pin for its GPIO function */
+    175              PORTA_PCR4 = PORT_PCR_MUX(0x1); // GPIO is alt1 function for this pin
+   \   00000002   0x2080             MOVS     R0,#+128
+   \   00000004   0x0040             LSLS     R0,R0,#+1        ;; #+256
+   \   00000006   0x....             LDR      R1,??DataTable2_14  ;; 0x40049010
+   \   00000008   0x6008             STR      R0,[R1, #+0]
+    176              
+    177              /* Configure the PTA4 pin for rising edge interrupts */
+    178              PORTA_PCR4 |= PORT_PCR_IRQC(0x9); 
+   \   0000000A   0x....             LDR      R0,??DataTable2_14  ;; 0x40049010
+   \   0000000C   0x6800             LDR      R0,[R0, #+0]
+   \   0000000E   0x2190             MOVS     R1,#+144
+   \   00000010   0x0309             LSLS     R1,R1,#+12       ;; #+589824
+   \   00000012   0x4301             ORRS     R1,R1,R0
+   \   00000014   0x....             LDR      R0,??DataTable2_14  ;; 0x40049010
+   \   00000016   0x6001             STR      R1,[R0, #+0]
+    179              
+    180          #ifdef CMSIS
+    181              /* Enable the associated IRQ in the NVIC */
+    182              enable_irq(PORTA_IRQn);      
+    183          #else
+    184          	  enable_irq(30); 
+   \   00000018   0x201E             MOVS     R0,#+30
+   \   0000001A   0x.... 0x....      BL       enable_irq
+    185          #endif	
+    186          }
+   \   0000001E   0xBD01             POP      {R0,PC}          ;; return
+    187          /********************************************************************/
+    188          
+    189          /********************************************************************/
+
+   \                                 In section .text, align 2, keep-with-next
+    190          void clk_out_init(void)
+    191          {
+    192          
+    193              // If you are using UART1 for serial communications do not
+    194              // initialize the clock out function or you may break the UART!
+    195              if (TERM_PORT_NUM != 1)
+    196              {
+    197                  /* Enable the CLKOUT function on PTC3 (alt5 function) */
+    198          	PORTC_PCR3 = ( PORT_PCR_MUX(0x5));
+   \                     clk_out_init: (+1)
+   \   00000000   0x20A0             MOVS     R0,#+160
+   \   00000002   0x00C0             LSLS     R0,R0,#+3        ;; #+1280
+   \   00000004   0x....             LDR      R1,??DataTable2_15  ;; 0x4004b00c
+   \   00000006   0x6008             STR      R0,[R1, #+0]
+    199                  
+    200                  /* Select the CLKOUT in the SMI_SOPT2 mux to be bus clk*/
+    201                  SIM_SOPT2 |= SIM_SOPT2_CLKOUTSEL(2);
+   \   00000008   0x....             LDR      R0,??DataTable2_5  ;; 0x40048004
+   \   0000000A   0x6800             LDR      R0,[R0, #+0]
+   \   0000000C   0x2140             MOVS     R1,#+64
+   \   0000000E   0x4301             ORRS     R1,R1,R0
+   \   00000010   0x....             LDR      R0,??DataTable2_5  ;; 0x40048004
+   \   00000012   0x6001             STR      R1,[R0, #+0]
+    202              }
+    203                  
+    204          }
+   \   00000014   0x4770             BX       LR               ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   0x40048038         DC32     0x40048038
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_1:
+   \   00000000   0x4007D002         DC32     0x4007d002
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_2:
+   \   00000000   0x40048044         DC32     0x40048044
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_3:
+   \   00000000   0x007A1200         DC32     0x7a1200
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_4:
+   \   00000000   0x........         DC32     mcg_clk_hz
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_5:
+   \   00000000   0x40048004         DC32     0x40048004
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_6:
+   \   00000000   0x........         DC32     uart0_clk_khz
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_7:
+   \   00000000   0xF3FFFFFF         DC32     0xf3ffffff
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_8:
+   \   00000000   0x........         DC32     mcg_clk_khz
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_9:
+   \   00000000   0x........         DC32     core_clk_khz
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_10:
+   \   00000000   0x........         DC32     periph_clk_khz
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_11:
+   \   00000000   0x40049004         DC32     0x40049004
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_12:
+   \   00000000   0x40049008         DC32     0x40049008
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_13:
+   \   00000000   0x4006A000         DC32     0x4006a000
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_14:
+   \   00000000   0x40049010         DC32     0x40049010
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2_15:
+   \   00000000   0x4004B00C         DC32     0x4004b00c
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       0   clk_out_init
+       8   enable_abort_button
+         8   -> enable_irq
+      16   sysinit
+        16   -> pll_init
+        16   -> uart0_init
+        16 __aeabi_idiv
+        16 __aeabi_uidiv
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       4  ??DataTable2
+       4  ??DataTable2_1
+       4  ??DataTable2_10
+       4  ??DataTable2_11
+       4  ??DataTable2_12
+       4  ??DataTable2_13
+       4  ??DataTable2_14
+       4  ??DataTable2_15
+       4  ??DataTable2_2
+       4  ??DataTable2_3
+       4  ??DataTable2_4
+       4  ??DataTable2_5
+       4  ??DataTable2_6
+       4  ??DataTable2_7
+       4  ??DataTable2_8
+       4  ??DataTable2_9
+      22  clk_out_init
+       4  core_clk_khz
+      32  enable_abort_button
+       4  mcg_clk_hz
+       4  mcg_clk_khz
+       4  periph_clk_khz
+       4  pll_clk_khz
+     226  sysinit
+       4  uart0_clk_hz
+       4  uart0_clk_khz
+
+ 
+  28 bytes in section .bss
+ 344 bytes in section .text
+ 
+ 344 bytes of CODE memory
+  28 bytes of DATA memory
+
+Errors: none
+Warnings: none

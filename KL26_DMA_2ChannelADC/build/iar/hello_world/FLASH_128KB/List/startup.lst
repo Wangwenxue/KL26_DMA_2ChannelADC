@@ -1,0 +1,286 @@
+###############################################################################
+#
+# IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM        04/Feb/2016  09:22:44
+# Copyright 1999-2015 IAR Systems AB.
+#
+#    Cpu mode     =  thumb
+#    Endian       =  little
+#    Source file  =  
+#        C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\src\common\startup.c
+#    Command line =  
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\src\common\startup.c" -D IAR -D FREEDOM -lCN
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\" -lB
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\" -o
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\"
+#        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
+#        --no_clustering --no_scheduling --debug --endian=little
+#        --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        7.2\arm\INC\c\DLib_Config_Normal.h" -I
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\projects\hello_world\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\common\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu\" -I
+#        "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu\headers\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\llwu\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\lptmr\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\mcg\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\pmc\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rcm\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rtc\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\smc\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\uart\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\wdog\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\cmp\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\platforms\"
+#        -I "C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\" -Ol
+#    List file    =  
+#        C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\startup.lst
+#    Object file  =  
+#        C:\Users\b51443\Desktop\jicheng
+#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\startup.o
+#
+###############################################################################
+
+C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\common\startup.c
+      1          /*
+      2           * File:    startup.c
+      3           * Purpose: Generic Kinetis startup code
+      4           *
+      5           * Notes:
+      6           */
+      7          
+      8          #include "common.h"
+      9          
+     10          #if (defined(IAR))
+     11          	#pragma section = ".data"
+     12          	#pragma section = ".data_init"
+     13          	#pragma section = ".bss"
+     14          	#pragma section = "CodeRelocate"
+     15          	#pragma section = "CodeRelocateRam"
+     16          #endif
+     17          
+     18          /********************************************************************/
+
+   \                                 In section .text, align 4, keep-with-next
+     19          void
+     20          common_startup(void)
+     21          {
+   \                     common_startup: (+1)
+   \   00000000   0xB580             PUSH     {R7,LR}
+     22          
+     23          #if (defined(CW))	
+     24              extern char __START_BSS[];
+     25              extern char __END_BSS[];
+     26              extern uint32 __DATA_ROM[];
+     27              extern uint32 __DATA_RAM[];
+     28              extern char __DATA_END[];
+     29          #endif
+     30          
+     31              /* Declare a counter we'll use in all of the copy loops */
+     32              uint32 n;
+     33          
+     34          #ifndef KEIL
+     35              /* Declare pointers for various data sections. These pointers
+     36               * are initialized using values pulled in from the linker file
+     37               */
+     38              uint8 * data_ram, * data_rom, * data_rom_end;
+     39              uint8 * bss_start, * bss_end;
+     40          #endif
+     41          
+     42          #if (defined(KEIL))
+     43          	extern uint32 Image$$VECTOR_ROM$$Base[];
+     44          	extern uint32 Image$$VECTOR_RAM$$Base[];
+     45          	#define __VECTOR_TABLE Image$$VECTOR_ROM$$Base  
+     46          	#define __VECTOR_RAM Image$$VECTOR_RAM$$Base  
+     47          #endif
+     48              /* Addresses for VECTOR_TABLE and VECTOR_RAM come from the linker file */
+     49              extern uint32 __VECTOR_TABLE[];
+     50              extern uint32 __VECTOR_RAM[];
+     51          
+     52              /* Copy the vector table to RAM */
+     53              if (__VECTOR_RAM != __VECTOR_TABLE)
+   \   00000002   0x481E             LDR      R0,??common_startup_0
+   \   00000004   0x491E             LDR      R1,??common_startup_0+0x4
+   \   00000006   0x4288             CMP      R0,R1
+   \   00000008   0xD00E             BEQ      ??common_startup_1
+     54              {
+     55                  for (n = 0; n < 0x104; n++)
+   \   0000000A   0x2000             MOVS     R0,#+0
+   \   0000000C   0xE008             B        ??common_startup_2
+     56                      __VECTOR_RAM[n] = __VECTOR_TABLE[n];
+   \                     ??common_startup_3: (+1)
+   \   0000000E   0x491C             LDR      R1,??common_startup_0+0x4
+   \   00000010   0x2204             MOVS     R2,#+4
+   \   00000012   0x4342             MULS     R2,R0,R2
+   \   00000014   0x5889             LDR      R1,[R1, R2]
+   \   00000016   0x4A19             LDR      R2,??common_startup_0
+   \   00000018   0x2304             MOVS     R3,#+4
+   \   0000001A   0x4343             MULS     R3,R0,R3
+   \   0000001C   0x50D1             STR      R1,[R2, R3]
+   \   0000001E   0x1C40             ADDS     R0,R0,#+1
+   \                     ??common_startup_2: (+1)
+   \   00000020   0x2182             MOVS     R1,#+130
+   \   00000022   0x0049             LSLS     R1,R1,#+1        ;; #+260
+   \   00000024   0x4288             CMP      R0,R1
+   \   00000026   0xD3F2             BCC      ??common_startup_3
+     57              }
+     58              /* Point the VTOR to the new copy of the vector table */
+     59              write_vtor((uint32)__VECTOR_RAM);    
+   \                     ??common_startup_1: (+1)
+   \   00000028   0x4814             LDR      R0,??common_startup_0
+   \   0000002A   0x.... 0x....      BL       write_vtor
+     60              
+     61              /* Get the addresses for the .data section (initialized data section) */
+     62              #if (defined(CW))
+     63                  data_ram = (uint8 *)__DATA_RAM;
+     64          	data_rom = (uint8 *)__DATA_ROM;
+     65          	data_rom_end  = (uint8 *)__DATA_END; /* This is actually a RAM address in CodeWarrior */
+     66          	n = data_rom_end - data_ram;
+     67              #elif (defined(IAR))
+     68          	data_ram = __section_begin(".data");
+   \   0000002E   0x4915             LDR      R1,??common_startup_0+0x8
+     69          	data_rom = __section_begin(".data_init");
+   \   00000030   0x4A15             LDR      R2,??common_startup_0+0xC
+     70          	data_rom_end = __section_end(".data_init");
+   \   00000032   0x4816             LDR      R0,??common_startup_0+0x10
+     71          	n = data_rom_end - data_rom;
+   \   00000034   0x1A80             SUBS     R0,R0,R2
+   \   00000036   0xE003             B        ??common_startup_4
+     72              #endif		
+     73          
+     74          #ifndef __CC_ARM
+     75          		
+     76          	/* Copy initialized data from ROM to RAM */
+     77          	while (n--)
+     78          		*data_ram++ = *data_rom++;
+   \                     ??common_startup_5: (+1)
+   \   00000038   0x7813             LDRB     R3,[R2, #+0]
+   \   0000003A   0x700B             STRB     R3,[R1, #+0]
+   \   0000003C   0x1C52             ADDS     R2,R2,#+1
+   \   0000003E   0x1C49             ADDS     R1,R1,#+1
+   \                     ??common_startup_4: (+1)
+   \   00000040   0x0003             MOVS     R3,R0
+   \   00000042   0x1E58             SUBS     R0,R3,#+1
+   \   00000044   0x2B00             CMP      R3,#+0
+   \   00000046   0xD1F7             BNE      ??common_startup_5
+     79          	
+     80          	
+     81              /* Get the addresses for the .bss section (zero-initialized data) */
+     82              #if (defined(CW))
+     83          	bss_start = (uint8 *)__START_BSS;
+     84          	bss_end = (uint8 *)__END_BSS;
+     85              #elif (defined(IAR))
+     86          	bss_start = __section_begin(".bss");
+   \   00000048   0x4911             LDR      R1,??common_startup_0+0x14
+     87          	bss_end = __section_end(".bss");
+   \   0000004A   0x4812             LDR      R0,??common_startup_0+0x18
+     88              #endif
+     89          	
+     90          
+     91              /* Clear the zero-initialized data section */
+     92              n = bss_end - bss_start;
+   \   0000004C   0x1A40             SUBS     R0,R0,R1
+   \   0000004E   0xE002             B        ??common_startup_6
+     93              while(n--)
+     94                *bss_start++ = 0;
+   \                     ??common_startup_7: (+1)
+   \   00000050   0x2200             MOVS     R2,#+0
+   \   00000052   0x700A             STRB     R2,[R1, #+0]
+   \   00000054   0x1C49             ADDS     R1,R1,#+1
+   \                     ??common_startup_6: (+1)
+   \   00000056   0x0002             MOVS     R2,R0
+   \   00000058   0x1E50             SUBS     R0,R2,#+1
+   \   0000005A   0x2A00             CMP      R2,#+0
+   \   0000005C   0xD1F8             BNE      ??common_startup_7
+     95          #endif
+     96          
+     97              /* Get addresses for any code sections that need to be copied from ROM to RAM.
+     98               * The IAR tools have a predefined keyword that can be used to mark individual
+     99               * functions for execution from RAM. Add "__ramfunc" before the return type in
+    100               * the function prototype for any routines you need to execute from RAM instead
+    101               * of ROM. ex: __ramfunc void foo(void);
+    102               */
+    103              #if (defined(IAR))
+    104            	uint8* code_relocate_ram = __section_begin("CodeRelocateRam");
+   \   0000005E   0x490E             LDR      R1,??common_startup_0+0x1C
+    105          	uint8* code_relocate = __section_begin("CodeRelocate");
+   \   00000060   0x4A0E             LDR      R2,??common_startup_0+0x20
+    106                  uint8* code_relocate_end = __section_end("CodeRelocate");
+   \   00000062   0x480F             LDR      R0,??common_startup_0+0x24
+    107          
+    108                  /* Copy functions from ROM to RAM */
+    109                  n = code_relocate_end - code_relocate;
+   \   00000064   0x1A80             SUBS     R0,R0,R2
+   \   00000066   0xE003             B        ??common_startup_8
+    110                  while (n--)
+    111                    *code_relocate_ram++ = *code_relocate++;
+   \                     ??common_startup_9: (+1)
+   \   00000068   0x7813             LDRB     R3,[R2, #+0]
+   \   0000006A   0x700B             STRB     R3,[R1, #+0]
+   \   0000006C   0x1C52             ADDS     R2,R2,#+1
+   \   0000006E   0x1C49             ADDS     R1,R1,#+1
+   \                     ??common_startup_8: (+1)
+   \   00000070   0x0003             MOVS     R3,R0
+   \   00000072   0x1E58             SUBS     R0,R3,#+1
+   \   00000074   0x2B00             CMP      R3,#+0
+   \   00000076   0xD1F7             BNE      ??common_startup_9
+    112              #endif
+    113          }
+   \   00000078   0xBD01             POP      {R0,PC}          ;; return
+   \   0000007A   0xBF00             Nop      
+   \                     ??common_startup_0:
+   \   0000007C   0x........         DC32     __VECTOR_RAM
+   \   00000080   0x........         DC32     __VECTOR_TABLE
+   \   00000084   0x........         DC32     SFB(`.data`)
+   \   00000088   0x........         DC32     SFB(`.data_init`)
+   \   0000008C   0x........         DC32     SFE(`.data_init`)
+   \   00000090   0x........         DC32     SFB(`.bss`)
+   \   00000094   0x........         DC32     SFE(`.bss`)
+   \   00000098   0x........         DC32     SFB(CodeRelocateRam)
+   \   0000009C   0x........         DC32     SFB(CodeRelocate)
+   \   000000A0   0x........         DC32     SFE(CodeRelocate)
+    114          /********************************************************************/
+
+   Maximum stack usage in bytes:
+
+   .cstack Function
+   ------- --------
+       8   common_startup
+         8   -> write_vtor
+
+
+   Section sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+     164  common_startup
+
+ 
+ 164 bytes in section .text
+ 
+ 164 bytes of CODE memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,337 @@
+###############################################################################
+#
+# IAR ELF Linker V7.40.3.8902/W32 for ARM                 04/Feb/2016  12:02:41
+# Copyright 2007-2015 IAR Systems AB.
+#
+#    Output file  =  
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Exe\hello_world_freedom.out
+#    Map file     =  
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\hello_world_freedom.map
+#    Command line =  
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\alloc.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\arm_cm0.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\assert.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\crt0.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\hello_world.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\io.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\llwu.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\lptmr.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\mcg.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\memtest.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\pmc.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\printf.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\queue.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\rcm.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\rtc.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\smc.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\start.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\startup.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\stdlib.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\sysinit.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\uart.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\uif.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\vectors.o
+#        -o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Exe\hello_world_freedom.out
+#        --map
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\hello_world_freedom.map
+#        --config
+#        "D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\config
+#        files\128KB_Pflash.icf" --semihosting --entry __iar_program_start
+#        --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"A2":  place at 0x00000410 { ro section .noinit };
+"P1":  place in [from 0x00000000 to 0x00020000] { ro, block CodeRelocate };
+"P2":  place in [from 0x1ffff410 to 0x20003000] {
+          rw, block CodeRelocateRam, block CSTACK, block HEAP };
+
+  Section              Kind        Address    Size  Object
+  -------              ----        -------    ----  ------
+"A1":                                        0x410
+  .intvec              const    0x00000000   0x410  vectors.o [1]
+                              - 0x00000410   0x410
+
+"A2":                                         0x18
+  .noinit              ro code  0x00000410    0x18  crt0.o [1]
+                              - 0x00000428    0x18
+
+"P1":                                       0x19ac
+  .text                ro code  0x00000428   0x4b8  printf.o [1]
+  .text                ro code  0x000008e0    0xe0  I32DivModFast.o [5]
+  .text                ro code  0x000009c0    0x1e  stdlib.o [1]
+  .text                ro code  0x000009e0     0x2  IntDivZer.o [5]
+  .text                ro code  0x000009e4   0x2f0  mcg.o [1]
+  .text                ro code  0x00000cd4   0x2a8  start.o [1]
+  .text                ro code  0x00000f7c    0xa4  startup.o [1]
+  .text                ro code  0x00001020   0x11c  sysinit.o [1]
+  .text                ro code  0x0000113c   0x1b8  rcm.o [1]
+  .text                ro code  0x000012f4   0x250  hello_world.o [1]
+  .text                ro code  0x00001544    0x54  arm_cm0.o [1]
+  .text                ro code  0x00001598   0x15c  uart.o [1]
+  .rodata              const    0x000016f4    0x40  start.o [1]
+  .rodata              const    0x00001734    0x40  start.o [1]
+  .rodata              const    0x00001774    0x3c  start.o [1]
+  .rodata              const    0x000017b0    0x3c  start.o [1]
+  .rodata              const    0x000017ec    0x3c  start.o [1]
+  .rodata              const    0x00001828    0x3c  start.o [1]
+  .text                ro code  0x00001864    0x3c  zero_init3.o [5]
+  .rodata              const    0x000018a0    0x38  arm_cm0.o [1]
+  .rodata              const    0x000018d8    0x30  rcm.o [1]
+  .rodata              const    0x00001908    0x30  vectors.o [1]
+  .rodata              const    0x00001938    0x2c  start.o [1]
+  .rodata              const    0x00001964    0x2c  start.o [1]
+  .rodata              const    0x00001990    0x2c  start.o [1]
+  .rodata              const    0x000019bc    0x28  rcm.o [1]
+  .rodata              const    0x000019e4    0x28  rcm.o [1]
+  .rodata              const    0x00001a0c    0x28  start.o [1]
+  .rodata              const    0x00001a34    0x28  start.o [1]
+  .text                ro code  0x00001a5c    0x28  data_init.o [5]
+  .rodata              const    0x00001a84    0x24  rcm.o [1]
+  .iar.init_table      const    0x00001aa8    0x10  - Linker created -
+  .rodata              const    0x00001ab8    0x20  rcm.o [1]
+  .rodata              const    0x00001ad8    0x20  start.o [1]
+  .rodata              const    0x00001af8    0x1c  rcm.o [1]
+  .rodata              const    0x00001b14    0x1c  rcm.o [1]
+  .rodata              const    0x00001b30    0x1c  rcm.o [1]
+  .rodata              const    0x00001b4c    0x1c  start.o [1]
+  .text                ro code  0x00001b68    0x1a  cmain.o [5]
+  .text                ro code  0x00001b82     0x4  low_level_init.o [3]
+  .text                ro code  0x00001b86     0x8  exit.o [3]
+  .text                ro code  0x00001b90     0xa  cexit.o [5]
+  .text                ro code  0x00001b9c    0x14  exit.o [6]
+  .rodata              const    0x00001bb0    0x18  rcm.o [1]
+  .rodata              const    0x00001bc8    0x18  rcm.o [1]
+  .rodata              const    0x00001be0    0x18  start.o [1]
+  .rodata              const    0x00001bf8    0x18  start.o [1]
+  .rodata              const    0x00001c10    0x18  start.o [1]
+  .rodata              const    0x00001c28    0x18  start.o [1]
+  .text                ro code  0x00001c40    0x18  vectors.o [1]
+  .data_init                    0x00001c58    0x18  <Block>
+    Initializer bytes  const    0x00001c58    0x18  <for .data-1>
+  .rodata              const    0x00001c70    0x14  rcm.o [1]
+  .rodata              const    0x00001c84    0x14  rcm.o [1]
+  .rodata              const    0x00001c98    0x14  start.o [1]
+  .rodata              const    0x00001cac    0x14  start.o [1]
+  .rodata              const    0x00001cc0    0x14  start.o [1]
+  .rodata              const    0x00001cd4    0x14  start.o [1]
+  .rodata              const    0x00001ce8    0x14  start.o [1]
+  .text                ro code  0x00001cfc    0x14  io.o [1]
+  .rodata              const    0x00001d10    0x10  rcm.o [1]
+  .rodata              const    0x00001d20     0xc  rcm.o [1]
+  .rodata              const    0x00001d2c     0xc  rcm.o [1]
+  .rodata              const    0x00001d38     0xc  rcm.o [1]
+  .rodata              const    0x00001d44     0xc  rcm.o [1]
+  .rodata              const    0x00001d50     0xc  rcm.o [1]
+  .rodata              const    0x00001d5c     0xc  start.o [1]
+  .text                ro code  0x00001d68     0xc  cstartup_M.o [5]
+  .rodata              const    0x00001d74     0x8  start.o [1]
+  .rodata              const    0x00001d7c     0x8  start.o [1]
+  .rodata              const    0x00001d84     0x8  start.o [1]
+  .rodata              const    0x00001d8c     0x8  start.o [1]
+  .rodata              const    0x00001d94     0x8  start.o [1]
+  .rodata              const    0x00001d9c     0x8  start.o [1]
+  .rodata              const    0x00001da4     0x8  start.o [1]
+  .rodata              const    0x00001dac     0x8  start.o [1]
+  .rodata              const    0x00001db4     0x8  start.o [1]
+  .rodata              const    0x00001dbc     0x8  start.o [1]
+  .rodata              const    0x00001dc4     0x8  start.o [1]
+  .rodata              const    0x00001dcc     0x8  start.o [1]
+  .rodata              const    0x00001dd4     0x0  zero_init3.o [5]
+  CodeRelocate                  0x00001dd4     0x0  <Block>
+                              - 0x00001dd4  0x19ac
+
+"P2":                                        0x170
+  .data                         0x1ffff410    0x18  <Block>
+    .data-1                     0x1ffff410    0x18  <Init block>
+      .data            inited   0x1ffff410    0x10  hello_world.o [1]
+      .data            inited   0x1ffff420     0x8  hello_world.o [1]
+  .bss                          0x1ffff428   0x158  <Block>
+    .bss               zero     0x1ffff428    0xa0  hello_world.o [1]
+    .bss               zero     0x1ffff4c8    0xa0  hello_world.o [1]
+    .bss               zero     0x1ffff568     0x4  sysinit.o [1]
+    .bss               zero     0x1ffff56c     0x4  sysinit.o [1]
+    .bss               zero     0x1ffff570     0x4  sysinit.o [1]
+    .bss               zero     0x1ffff574     0x4  sysinit.o [1]
+    .bss               zero     0x1ffff578     0x4  sysinit.o [1]
+    .bss               zero     0x1ffff57c     0x1  hello_world.o [1]
+  CodeRelocateRam               0x1ffff580     0x0  <Block>
+                              - 0x1ffff580   0x170
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x155:
+          0x1ffff428  0x155
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj: [1]
+    arm_cm0.o              84       56
+    crt0.o                 24
+    hello_world.o         592       24      345
+    io.o                   20
+    mcg.o                 752
+    printf.o            1 208
+    rcm.o                 440      444
+    start.o               680      944
+    startup.o             164
+    stdlib.o               30
+    sysinit.o             284                20
+    uart.o                348
+    vectors.o              24    1 088
+    -------------------------------------------
+    Total:              4 650    2 556      365
+
+command line: [2]
+    -------------------------------------------
+    Total:
+
+dl6M_tln.a: [3]
+    exit.o                  8
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                 12
+
+m6M_tl.a: [4]
+    -------------------------------------------
+    Total:
+
+rt6M_tl.a: [5]
+    I32DivModFast.o       224
+    IntDivZer.o             2
+    cexit.o                10
+    cmain.o                26
+    cstartup_M.o           12
+    data_init.o            40
+    zero_init3.o           60
+    -------------------------------------------
+    Total:                374
+
+shb_l.a: [6]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    8
+    Linker created                  16
+-----------------------------------------------
+    Grand Total:        5 064    2 572      365
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.bss$$Base              0x1ffff428          --   Gb  - Linker created -
+.bss$$Limit             0x1ffff580          --   Gb  - Linker created -
+.data$$Base             0x1ffff410          --   Gb  - Linker created -
+.data$$Limit            0x1ffff428          --   Gb  - Linker created -
+.data_init$$Base        0x00001c58          --   Gb  - Linker created -
+.data_init$$Limit       0x00001c70          --   Gb  - Linker created -
+.iar.init_table$$Base   0x00001aa8          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00001ab8          --   Gb  - Linker created -
+?main                   0x00001b69         Code  Gb  cmain.o [5]
+ADC_Channel             0x1ffff410   0x10  Data  Gb  hello_world.o [1]
+Buffer_Address          0x1ffff420    0x8  Data  Gb  hello_world.o [1]
+CodeRelocate$$Base      0x00001dd4          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x00001dd4          --   Gb  - Linker created -
+CodeRelocateRam$$Base   0x1ffff580          --   Gb  - Linker created -
+CodeRelocateRam$$Limit  0x1ffff580          --   Gb  - Linker created -
+DMA1_IRQHandler         0x0000142f   0x8e  Code  Gb  hello_world.o [1]
+DMA_2ChanelADC_Init     0x00001367   0xb4  Code  Gb  hello_world.o [1]
+Region$$Table$$Base     0x00001aa8          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00001ab8          --   Gb  - Linker created -
+Result_Buffer1          0x1ffff428   0xa0  Data  Gb  hello_world.o [1]
+Result_Buffer2          0x1ffff4c8   0xa0  Data  Gb  hello_world.o [1]
+__BOOT_STACK_ADDRESS {Abs}
+                        0x20002ff8          --   Gb  command line/config [2]
+__VECTOR_RAM {Abs}      0x1ffff000          --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}    0x00000000          --   Gb  command line/config [2]
+__aeabi_idiv            0x0000090d         Code  Gb  I32DivModFast.o [5]
+__aeabi_idiv0           0x000009e1         Code  Gb  IntDivZer.o [5]
+__aeabi_idivmod         0x0000090d         Code  Gb  I32DivModFast.o [5]
+__aeabi_uidiv           0x00000913         Code  Gb  I32DivModFast.o [5]
+__aeabi_uidivmod        0x00000913         Code  Gb  I32DivModFast.o [5]
+__cmain                 0x00001b69         Code  Gb  cmain.o [5]
+__exit                  0x00001b9d   0x14  Code  Gb  exit.o [6]
+__iar_data_init3        0x00001a5d   0x28  Code  Gb  data_init.o [5]
+__iar_program_start     0x00001d69         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3        0x00001865   0x3c  Code  Gb  zero_init3.o [5]
+__low_level_init        0x00001b83    0x4  Code  Gb  low_level_init.o [3]
+__startup               0x00000411         Code  Gb  crt0.o [1]
+__vector_table          0x00000000  0x410  Data  Gb  vectors.o [1]
+_call_main              0x00001b75         Code  Gb  cmain.o [5]
+_exit                   0x00001b91         Code  Gb  cexit.o [5]
+_main                   0x00001b7f         Code  Gb  cmain.o [5]
+common_startup          0x00000f7d   0xa4  Code  Gb  startup.o [1]
+core_clk_khz            0x1ffff570    0x4  Data  Gb  sysinit.o [1]
+cpu_identify            0x00000cf9  0x1e0  Code  Gb  start.o [1]
+default_isr             0x00001c41    0xe  Code  Gb  vectors.o [1]
+enable_irq              0x0000154b   0x3e  Code  Gb  arm_cm0.o [1]
+exit                    0x00001b87    0x8  Code  Gb  exit.o [3]
+init_ADC8               0x000012f5   0x34  Code  Gb  hello_world.o [1]
+init_TPM1               0x00001329   0x3e  Code  Gb  hello_world.o [1]
+main                    0x0000141d   0x12  Code  Gb  hello_world.o [1]
+mcg_clk_hz              0x1ffff568    0x4  Data  Gb  sysinit.o [1]
+mcg_clk_khz             0x1ffff56c    0x4  Data  Gb  sysinit.o [1]
+outSRS                  0x0000113d  0x1b8  Code  Gb  rcm.o [1]
+out_char                0x00001cfd    0xe  Code  Gb  io.o [1]
+pCounter                0x1ffff57c    0x1  Data  Gb  hello_world.o [1]
+periph_clk_khz          0x1ffff574    0x4  Data  Gb  sysinit.o [1]
+pll_init                0x000009e5  0x2a2  Code  Gb  mcg.o [1]
+printf                  0x000008bd   0x1e  Code  Gb  printf.o [1]
+printk                  0x0000050f  0x3ae  Code  Gb  printf.o [1]
+printk_mknumstr         0x00000455   0x7e  Code  Lc  printf.o [1]
+printk_pad_space        0x000004f1   0x1e  Code  Lc  printf.o [1]
+printk_pad_zero         0x000004d3   0x1e  Code  Lc  printf.o [1]
+printk_putc             0x00000429   0x2c  Code  Lc  printf.o [1]
+start                   0x00000cd5   0x24  Code  Gb  start.o [1]
+strlen                  0x000009c1   0x1e  Code  Gb  stdlib.o [1]
+sysinit                 0x00001021   0xe2  Code  Gb  sysinit.o [1]
+uart0_clk_khz           0x1ffff578    0x4  Data  Gb  sysinit.o [1]
+uart0_init              0x00001599  0x12a  Code  Gb  uart.o [1]
+uart0_putchar           0x000016e9    0xc  Code  Gb  uart.o [1]
+write_vtor              0x00001545    0x6  Code  Gb  arm_cm0.o [1]
+
+
+[1] = D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj
+[2] = command line
+[3] = dl6M_tln.a
+[4] = m6M_tl.a
+[5] = rt6M_tl.a
+[6] = shb_l.a
+
+  5 064 bytes of readonly  code memory
+  2 572 bytes of readonly  data memory
+    365 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
