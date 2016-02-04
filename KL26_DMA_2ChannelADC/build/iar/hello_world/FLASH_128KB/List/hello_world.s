@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-// IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM       04/Feb/2016  12:02:41
+// IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM       04/Feb/2016  13:38:26
 // Copyright 1999-2015 IAR Systems AB.
 //
 //    Cpu mode     =  thumb
@@ -80,13 +80,13 @@
 //    6 
 //    7 #include "common.h" 
 //    8 
-//    9 #define BUFFER_SIZE     10
+//    9 
 //   10 #define ADC_CHANNEL_NUMBER 4
 //   11 #define ADC_SAMPLE_POINTS  20   // adc sample points for one adc channel
 //   12 #define BUFFER_SIZE     (ADC_SAMPLE_POINTS * ADC_CHANNEL_NUMBER)
 //   13 
 //   14 
-//   15 #pragma data_alignment = 4* ADC_CHANNEL_NUMBER //The ADC_Channel address should be align with the DMA Circular buffer size
+//   15 #pragma data_alignment = 4*ADC_CHANNEL_NUMBER  //The ADC_Channel address should be align with the DMA Circular buffer size
 
         SECTION `.data`:DATA:REORDER:NOROOT(4)
 //   16 uint32 ADC_Channel[ADC_CHANNEL_NUMBER]={0, 26, 29, 30};   //Channel list for Channe 0,Channe 26,Channel 29, Channe30
@@ -399,10 +399,11 @@ main:
 //  130 { 
 DMA1_IRQHandler:
         PUSH     {LR}
-//  131   TPM1_SC &= TPM_SC_CMOD(0);    //stop the counter
+//  131   TPM1_SC &= ~TPM_SC_CMOD_MASK;    //stop the counter
         LDR      R0,??DataTable3_10  ;; 0x40039000
         LDR      R0,[R0, #+0]
-        MOVS     R0,#+0
+        MOVS     R1,#+24
+        BICS     R0,R0,R1
         LDR      R1,??DataTable3_10  ;; 0x40039000
         STR      R0,[R1, #+0]
 //  132   DMA_DCR1 &= ~DMA_DCR_ERQ_MASK;  // 0 Peripheral request is ignored.
@@ -716,10 +717,10 @@ DMA1_IRQHandler:
 // 
 // 321 bytes in section .bss
 //  24 bytes in section .data
-// 590 bytes in section .text
+// 592 bytes in section .text
 // 
-// 590 bytes of CODE memory
+// 592 bytes of CODE memory
 // 345 bytes of DATA memory
 //
 //Errors: none
-//Warnings: 2
+//Warnings: 1

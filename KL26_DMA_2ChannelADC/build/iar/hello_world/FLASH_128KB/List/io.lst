@@ -1,69 +1,63 @@
 ###############################################################################
 #
-# IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM        04/Feb/2016  09:22:41
+# IAR ANSI C/C++ Compiler V7.40.3.8902/W32 for ARM        04/Feb/2016  13:23:56
 # Copyright 1999-2015 IAR Systems AB.
 #
 #    Cpu mode     =  thumb
 #    Endian       =  little
-#    Source file  =  
-#        C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\src\common\io.c
+#    Source file  =  D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\common\io.c
 #    Command line =  
-#        "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\src\common\io.c" -D IAR -D FREEDOM -lCN
-#        "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\" -lB
-#        "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\" -o
-#        "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\"
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\common\io.c -D IAR -D
+#        FREEDOM -lCN
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\
+#        -lB
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\
+#        -o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\
 #        --no_cse --no_unroll --no_inline --no_code_motion --no_tbaa
 #        --no_clustering --no_scheduling --debug --endian=little
 #        --cpu=Cortex-M0+ -e --fpu=None --dlib_config "C:\Program Files
 #        (x86)\IAR Systems\Embedded Workbench
 #        7.2\arm\INC\c\DLib_Config_Normal.h" -I
-#        "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\projects\hello_world\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\common\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu\" -I
-#        "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu\headers\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\llwu\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\lptmr\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\mcg\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\pmc\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rcm\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rtc\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\smc\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\uart\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\wdog\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\cmp\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\platforms\"
-#        -I "C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\" -Ol
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\projects\hello_world\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\common\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu\headers\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\llwu\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\lptmr\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\mcg\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\pmc\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rcm\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rtc\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\smc\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\uart\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\wdog\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\cmp\
+#        -I
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\platforms\
+#        -I D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\
+#        -Ol
 #    List file    =  
-#        C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\io.lst
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\List\io.lst
 #    Object file  =  
-#        C:\Users\b51443\Desktop\jicheng
-#        dma\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\io.o
+#        D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj\io.o
 #
 ###############################################################################
 
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\common\io.c
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\common\io.c
       1          /*
       2           * File:		io.c
       3           * Purpose:		Serial Input/Output routines

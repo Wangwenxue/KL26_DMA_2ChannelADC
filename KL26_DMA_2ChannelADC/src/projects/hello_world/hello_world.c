@@ -6,13 +6,13 @@
 
 #include "common.h" 
 
-#define BUFFER_SIZE     10
+
 #define ADC_CHANNEL_NUMBER 4
 #define ADC_SAMPLE_POINTS  20   // adc sample points for one adc channel
 #define BUFFER_SIZE     (ADC_SAMPLE_POINTS * ADC_CHANNEL_NUMBER)
 
 
-#pragma data_alignment = 4* ADC_CHANNEL_NUMBER //The ADC_Channel address should be align with the DMA Circular buffer size
+#pragma data_alignment = 4*ADC_CHANNEL_NUMBER  //The ADC_Channel address should be align with the DMA Circular buffer size
 uint32 ADC_Channel[ADC_CHANNEL_NUMBER]={0, 26, 29, 30};   //Channel list for Channe 0,Channe 26,Channel 29, Channe30
 
 unsigned char pCounter=0;               // Counter used for Dual buffer switch
@@ -128,7 +128,7 @@ int main (void)
 /********************************************************************/
 void DMA1_IRQHandler(void)
 { 
-  TPM1_SC &= TPM_SC_CMOD(0);    //stop the counter
+  TPM1_SC &= ~TPM_SC_CMOD_MASK;    //stop the counter
   DMA_DCR1 &= ~DMA_DCR_ERQ_MASK;  // 0 Peripheral request is ignored.
   
   /* Create pointer & variable for reading DMA_DSR register */   

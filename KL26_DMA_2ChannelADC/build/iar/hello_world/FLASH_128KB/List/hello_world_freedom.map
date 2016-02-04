@@ -1,6 +1,6 @@
 ###############################################################################
 #
-# IAR ELF Linker V7.40.3.8902/W32 for ARM                 04/Feb/2016  12:02:41
+# IAR ELF Linker V7.40.3.8902/W32 for ARM                 04/Feb/2016  13:38:26
 # Copyright 2007-2015 IAR Systems AB.
 #
 #    Output file  =  
@@ -70,7 +70,7 @@ __SystemLibrary = DLib
   .noinit              ro code  0x00000410    0x18  crt0.o [1]
                               - 0x00000428    0x18
 
-"P1":                                       0x19ac
+"P1":                                       0x19b0
   .text                ro code  0x00000428   0x4b8  printf.o [1]
   .text                ro code  0x000008e0    0xe0  I32DivModFast.o [5]
   .text                ro code  0x000009c0    0x1e  stdlib.o [1]
@@ -80,80 +80,80 @@ __SystemLibrary = DLib
   .text                ro code  0x00000f7c    0xa4  startup.o [1]
   .text                ro code  0x00001020   0x11c  sysinit.o [1]
   .text                ro code  0x0000113c   0x1b8  rcm.o [1]
-  .text                ro code  0x000012f4   0x250  hello_world.o [1]
-  .text                ro code  0x00001544    0x54  arm_cm0.o [1]
-  .text                ro code  0x00001598   0x15c  uart.o [1]
-  .rodata              const    0x000016f4    0x40  start.o [1]
-  .rodata              const    0x00001734    0x40  start.o [1]
-  .rodata              const    0x00001774    0x3c  start.o [1]
-  .rodata              const    0x000017b0    0x3c  start.o [1]
-  .rodata              const    0x000017ec    0x3c  start.o [1]
-  .rodata              const    0x00001828    0x3c  start.o [1]
-  .text                ro code  0x00001864    0x3c  zero_init3.o [5]
-  .rodata              const    0x000018a0    0x38  arm_cm0.o [1]
-  .rodata              const    0x000018d8    0x30  rcm.o [1]
-  .rodata              const    0x00001908    0x30  vectors.o [1]
-  .rodata              const    0x00001938    0x2c  start.o [1]
-  .rodata              const    0x00001964    0x2c  start.o [1]
-  .rodata              const    0x00001990    0x2c  start.o [1]
-  .rodata              const    0x000019bc    0x28  rcm.o [1]
-  .rodata              const    0x000019e4    0x28  rcm.o [1]
-  .rodata              const    0x00001a0c    0x28  start.o [1]
-  .rodata              const    0x00001a34    0x28  start.o [1]
-  .text                ro code  0x00001a5c    0x28  data_init.o [5]
-  .rodata              const    0x00001a84    0x24  rcm.o [1]
-  .iar.init_table      const    0x00001aa8    0x10  - Linker created -
-  .rodata              const    0x00001ab8    0x20  rcm.o [1]
-  .rodata              const    0x00001ad8    0x20  start.o [1]
-  .rodata              const    0x00001af8    0x1c  rcm.o [1]
-  .rodata              const    0x00001b14    0x1c  rcm.o [1]
-  .rodata              const    0x00001b30    0x1c  rcm.o [1]
-  .rodata              const    0x00001b4c    0x1c  start.o [1]
-  .text                ro code  0x00001b68    0x1a  cmain.o [5]
-  .text                ro code  0x00001b82     0x4  low_level_init.o [3]
-  .text                ro code  0x00001b86     0x8  exit.o [3]
-  .text                ro code  0x00001b90     0xa  cexit.o [5]
-  .text                ro code  0x00001b9c    0x14  exit.o [6]
-  .rodata              const    0x00001bb0    0x18  rcm.o [1]
-  .rodata              const    0x00001bc8    0x18  rcm.o [1]
-  .rodata              const    0x00001be0    0x18  start.o [1]
-  .rodata              const    0x00001bf8    0x18  start.o [1]
-  .rodata              const    0x00001c10    0x18  start.o [1]
-  .rodata              const    0x00001c28    0x18  start.o [1]
-  .text                ro code  0x00001c40    0x18  vectors.o [1]
-  .data_init                    0x00001c58    0x18  <Block>
-    Initializer bytes  const    0x00001c58    0x18  <for .data-1>
-  .rodata              const    0x00001c70    0x14  rcm.o [1]
-  .rodata              const    0x00001c84    0x14  rcm.o [1]
-  .rodata              const    0x00001c98    0x14  start.o [1]
-  .rodata              const    0x00001cac    0x14  start.o [1]
-  .rodata              const    0x00001cc0    0x14  start.o [1]
-  .rodata              const    0x00001cd4    0x14  start.o [1]
-  .rodata              const    0x00001ce8    0x14  start.o [1]
-  .text                ro code  0x00001cfc    0x14  io.o [1]
-  .rodata              const    0x00001d10    0x10  rcm.o [1]
-  .rodata              const    0x00001d20     0xc  rcm.o [1]
-  .rodata              const    0x00001d2c     0xc  rcm.o [1]
-  .rodata              const    0x00001d38     0xc  rcm.o [1]
-  .rodata              const    0x00001d44     0xc  rcm.o [1]
-  .rodata              const    0x00001d50     0xc  rcm.o [1]
-  .rodata              const    0x00001d5c     0xc  start.o [1]
-  .text                ro code  0x00001d68     0xc  cstartup_M.o [5]
-  .rodata              const    0x00001d74     0x8  start.o [1]
-  .rodata              const    0x00001d7c     0x8  start.o [1]
-  .rodata              const    0x00001d84     0x8  start.o [1]
-  .rodata              const    0x00001d8c     0x8  start.o [1]
-  .rodata              const    0x00001d94     0x8  start.o [1]
-  .rodata              const    0x00001d9c     0x8  start.o [1]
-  .rodata              const    0x00001da4     0x8  start.o [1]
-  .rodata              const    0x00001dac     0x8  start.o [1]
-  .rodata              const    0x00001db4     0x8  start.o [1]
-  .rodata              const    0x00001dbc     0x8  start.o [1]
-  .rodata              const    0x00001dc4     0x8  start.o [1]
-  .rodata              const    0x00001dcc     0x8  start.o [1]
-  .rodata              const    0x00001dd4     0x0  zero_init3.o [5]
-  CodeRelocate                  0x00001dd4     0x0  <Block>
-                              - 0x00001dd4  0x19ac
+  .text                ro code  0x000012f4   0x254  hello_world.o [1]
+  .text                ro code  0x00001548    0x54  arm_cm0.o [1]
+  .text                ro code  0x0000159c   0x15c  uart.o [1]
+  .rodata              const    0x000016f8    0x40  start.o [1]
+  .rodata              const    0x00001738    0x40  start.o [1]
+  .rodata              const    0x00001778    0x3c  start.o [1]
+  .rodata              const    0x000017b4    0x3c  start.o [1]
+  .rodata              const    0x000017f0    0x3c  start.o [1]
+  .rodata              const    0x0000182c    0x3c  start.o [1]
+  .text                ro code  0x00001868    0x3c  zero_init3.o [5]
+  .rodata              const    0x000018a4    0x38  arm_cm0.o [1]
+  .rodata              const    0x000018dc    0x30  rcm.o [1]
+  .rodata              const    0x0000190c    0x30  vectors.o [1]
+  .rodata              const    0x0000193c    0x2c  start.o [1]
+  .rodata              const    0x00001968    0x2c  start.o [1]
+  .rodata              const    0x00001994    0x2c  start.o [1]
+  .rodata              const    0x000019c0    0x28  rcm.o [1]
+  .rodata              const    0x000019e8    0x28  rcm.o [1]
+  .rodata              const    0x00001a10    0x28  start.o [1]
+  .rodata              const    0x00001a38    0x28  start.o [1]
+  .text                ro code  0x00001a60    0x28  data_init.o [5]
+  .rodata              const    0x00001a88    0x24  rcm.o [1]
+  .iar.init_table      const    0x00001aac    0x10  - Linker created -
+  .rodata              const    0x00001abc    0x20  rcm.o [1]
+  .rodata              const    0x00001adc    0x20  start.o [1]
+  .rodata              const    0x00001afc    0x1c  rcm.o [1]
+  .rodata              const    0x00001b18    0x1c  rcm.o [1]
+  .rodata              const    0x00001b34    0x1c  rcm.o [1]
+  .rodata              const    0x00001b50    0x1c  start.o [1]
+  .text                ro code  0x00001b6c    0x1a  cmain.o [5]
+  .text                ro code  0x00001b86     0x4  low_level_init.o [3]
+  .text                ro code  0x00001b8a     0x8  exit.o [3]
+  .text                ro code  0x00001b94     0xa  cexit.o [5]
+  .text                ro code  0x00001ba0    0x14  exit.o [6]
+  .rodata              const    0x00001bb4    0x18  rcm.o [1]
+  .rodata              const    0x00001bcc    0x18  rcm.o [1]
+  .rodata              const    0x00001be4    0x18  start.o [1]
+  .rodata              const    0x00001bfc    0x18  start.o [1]
+  .rodata              const    0x00001c14    0x18  start.o [1]
+  .rodata              const    0x00001c2c    0x18  start.o [1]
+  .text                ro code  0x00001c44    0x18  vectors.o [1]
+  .data_init                    0x00001c5c    0x18  <Block>
+    Initializer bytes  const    0x00001c5c    0x18  <for .data-1>
+  .rodata              const    0x00001c74    0x14  rcm.o [1]
+  .rodata              const    0x00001c88    0x14  rcm.o [1]
+  .rodata              const    0x00001c9c    0x14  start.o [1]
+  .rodata              const    0x00001cb0    0x14  start.o [1]
+  .rodata              const    0x00001cc4    0x14  start.o [1]
+  .rodata              const    0x00001cd8    0x14  start.o [1]
+  .rodata              const    0x00001cec    0x14  start.o [1]
+  .text                ro code  0x00001d00    0x14  io.o [1]
+  .rodata              const    0x00001d14    0x10  rcm.o [1]
+  .rodata              const    0x00001d24     0xc  rcm.o [1]
+  .rodata              const    0x00001d30     0xc  rcm.o [1]
+  .rodata              const    0x00001d3c     0xc  rcm.o [1]
+  .rodata              const    0x00001d48     0xc  rcm.o [1]
+  .rodata              const    0x00001d54     0xc  rcm.o [1]
+  .rodata              const    0x00001d60     0xc  start.o [1]
+  .text                ro code  0x00001d6c     0xc  cstartup_M.o [5]
+  .rodata              const    0x00001d78     0x8  start.o [1]
+  .rodata              const    0x00001d80     0x8  start.o [1]
+  .rodata              const    0x00001d88     0x8  start.o [1]
+  .rodata              const    0x00001d90     0x8  start.o [1]
+  .rodata              const    0x00001d98     0x8  start.o [1]
+  .rodata              const    0x00001da0     0x8  start.o [1]
+  .rodata              const    0x00001da8     0x8  start.o [1]
+  .rodata              const    0x00001db0     0x8  start.o [1]
+  .rodata              const    0x00001db8     0x8  start.o [1]
+  .rodata              const    0x00001dc0     0x8  start.o [1]
+  .rodata              const    0x00001dc8     0x8  start.o [1]
+  .rodata              const    0x00001dd0     0x8  start.o [1]
+  .rodata              const    0x00001dd8     0x0  zero_init3.o [5]
+  CodeRelocate                  0x00001dd8     0x0  <Block>
+                              - 0x00001dd8  0x19b0
 
 "P2":                                        0x170
   .data                         0x1ffff410    0x18  <Block>
@@ -194,7 +194,7 @@ Zero (__iar_zero_init3)
 D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj: [1]
     arm_cm0.o              84       56
     crt0.o                 24
-    hello_world.o         592       24      345
+    hello_world.o         596       24      345
     io.o                   20
     mcg.o                 752
     printf.o            1 208
@@ -206,7 +206,7 @@ D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj: [
     uart.o                348
     vectors.o              24    1 088
     -------------------------------------------
-    Total:              4 650    2 556      365
+    Total:              4 654    2 556      365
 
 command line: [2]
     -------------------------------------------
@@ -241,7 +241,7 @@ shb_l.a: [6]
     Gaps                    8
     Linker created                  16
 -----------------------------------------------
-    Grand Total:        5 064    2 572      365
+    Grand Total:        5 068    2 572      365
 
 
 *******************************************************************************
@@ -254,21 +254,21 @@ Entry                      Address   Size  Type      Object
 .bss$$Limit             0x1ffff580          --   Gb  - Linker created -
 .data$$Base             0x1ffff410          --   Gb  - Linker created -
 .data$$Limit            0x1ffff428          --   Gb  - Linker created -
-.data_init$$Base        0x00001c58          --   Gb  - Linker created -
-.data_init$$Limit       0x00001c70          --   Gb  - Linker created -
-.iar.init_table$$Base   0x00001aa8          --   Gb  - Linker created -
-.iar.init_table$$Limit  0x00001ab8          --   Gb  - Linker created -
-?main                   0x00001b69         Code  Gb  cmain.o [5]
+.data_init$$Base        0x00001c5c          --   Gb  - Linker created -
+.data_init$$Limit       0x00001c74          --   Gb  - Linker created -
+.iar.init_table$$Base   0x00001aac          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00001abc          --   Gb  - Linker created -
+?main                   0x00001b6d         Code  Gb  cmain.o [5]
 ADC_Channel             0x1ffff410   0x10  Data  Gb  hello_world.o [1]
 Buffer_Address          0x1ffff420    0x8  Data  Gb  hello_world.o [1]
-CodeRelocate$$Base      0x00001dd4          --   Gb  - Linker created -
-CodeRelocate$$Limit     0x00001dd4          --   Gb  - Linker created -
+CodeRelocate$$Base      0x00001dd8          --   Gb  - Linker created -
+CodeRelocate$$Limit     0x00001dd8          --   Gb  - Linker created -
 CodeRelocateRam$$Base   0x1ffff580          --   Gb  - Linker created -
 CodeRelocateRam$$Limit  0x1ffff580          --   Gb  - Linker created -
-DMA1_IRQHandler         0x0000142f   0x8e  Code  Gb  hello_world.o [1]
+DMA1_IRQHandler         0x0000142f   0x90  Code  Gb  hello_world.o [1]
 DMA_2ChanelADC_Init     0x00001367   0xb4  Code  Gb  hello_world.o [1]
-Region$$Table$$Base     0x00001aa8          --   Gb  - Linker created -
-Region$$Table$$Limit    0x00001ab8          --   Gb  - Linker created -
+Region$$Table$$Base     0x00001aac          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00001abc          --   Gb  - Linker created -
 Result_Buffer1          0x1ffff428   0xa0  Data  Gb  hello_world.o [1]
 Result_Buffer2          0x1ffff4c8   0xa0  Data  Gb  hello_world.o [1]
 __BOOT_STACK_ADDRESS {Abs}
@@ -280,30 +280,30 @@ __aeabi_idiv0           0x000009e1         Code  Gb  IntDivZer.o [5]
 __aeabi_idivmod         0x0000090d         Code  Gb  I32DivModFast.o [5]
 __aeabi_uidiv           0x00000913         Code  Gb  I32DivModFast.o [5]
 __aeabi_uidivmod        0x00000913         Code  Gb  I32DivModFast.o [5]
-__cmain                 0x00001b69         Code  Gb  cmain.o [5]
-__exit                  0x00001b9d   0x14  Code  Gb  exit.o [6]
-__iar_data_init3        0x00001a5d   0x28  Code  Gb  data_init.o [5]
-__iar_program_start     0x00001d69         Code  Gb  cstartup_M.o [5]
-__iar_zero_init3        0x00001865   0x3c  Code  Gb  zero_init3.o [5]
-__low_level_init        0x00001b83    0x4  Code  Gb  low_level_init.o [3]
+__cmain                 0x00001b6d         Code  Gb  cmain.o [5]
+__exit                  0x00001ba1   0x14  Code  Gb  exit.o [6]
+__iar_data_init3        0x00001a61   0x28  Code  Gb  data_init.o [5]
+__iar_program_start     0x00001d6d         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3        0x00001869   0x3c  Code  Gb  zero_init3.o [5]
+__low_level_init        0x00001b87    0x4  Code  Gb  low_level_init.o [3]
 __startup               0x00000411         Code  Gb  crt0.o [1]
 __vector_table          0x00000000  0x410  Data  Gb  vectors.o [1]
-_call_main              0x00001b75         Code  Gb  cmain.o [5]
-_exit                   0x00001b91         Code  Gb  cexit.o [5]
-_main                   0x00001b7f         Code  Gb  cmain.o [5]
+_call_main              0x00001b79         Code  Gb  cmain.o [5]
+_exit                   0x00001b95         Code  Gb  cexit.o [5]
+_main                   0x00001b83         Code  Gb  cmain.o [5]
 common_startup          0x00000f7d   0xa4  Code  Gb  startup.o [1]
 core_clk_khz            0x1ffff570    0x4  Data  Gb  sysinit.o [1]
 cpu_identify            0x00000cf9  0x1e0  Code  Gb  start.o [1]
-default_isr             0x00001c41    0xe  Code  Gb  vectors.o [1]
-enable_irq              0x0000154b   0x3e  Code  Gb  arm_cm0.o [1]
-exit                    0x00001b87    0x8  Code  Gb  exit.o [3]
+default_isr             0x00001c45    0xe  Code  Gb  vectors.o [1]
+enable_irq              0x0000154f   0x3e  Code  Gb  arm_cm0.o [1]
+exit                    0x00001b8b    0x8  Code  Gb  exit.o [3]
 init_ADC8               0x000012f5   0x34  Code  Gb  hello_world.o [1]
 init_TPM1               0x00001329   0x3e  Code  Gb  hello_world.o [1]
 main                    0x0000141d   0x12  Code  Gb  hello_world.o [1]
 mcg_clk_hz              0x1ffff568    0x4  Data  Gb  sysinit.o [1]
 mcg_clk_khz             0x1ffff56c    0x4  Data  Gb  sysinit.o [1]
 outSRS                  0x0000113d  0x1b8  Code  Gb  rcm.o [1]
-out_char                0x00001cfd    0xe  Code  Gb  io.o [1]
+out_char                0x00001d01    0xe  Code  Gb  io.o [1]
 pCounter                0x1ffff57c    0x1  Data  Gb  hello_world.o [1]
 periph_clk_khz          0x1ffff574    0x4  Data  Gb  sysinit.o [1]
 pll_init                0x000009e5  0x2a2  Code  Gb  mcg.o [1]
@@ -317,9 +317,9 @@ start                   0x00000cd5   0x24  Code  Gb  start.o [1]
 strlen                  0x000009c1   0x1e  Code  Gb  stdlib.o [1]
 sysinit                 0x00001021   0xe2  Code  Gb  sysinit.o [1]
 uart0_clk_khz           0x1ffff578    0x4  Data  Gb  sysinit.o [1]
-uart0_init              0x00001599  0x12a  Code  Gb  uart.o [1]
-uart0_putchar           0x000016e9    0xc  Code  Gb  uart.o [1]
-write_vtor              0x00001545    0x6  Code  Gb  arm_cm0.o [1]
+uart0_init              0x0000159d  0x12a  Code  Gb  uart.o [1]
+uart0_putchar           0x000016ed    0xc  Code  Gb  uart.o [1]
+write_vtor              0x00001549    0x6  Code  Gb  arm_cm0.o [1]
 
 
 [1] = D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\FLASH_128KB\Obj
@@ -329,7 +329,7 @@ write_vtor              0x00001545    0x6  Code  Gb  arm_cm0.o [1]
 [5] = rt6M_tl.a
 [6] = shb_l.a
 
-  5 064 bytes of readonly  code memory
+  5 068 bytes of readonly  code memory
   2 572 bytes of readonly  data memory
     365 bytes of readwrite data memory
 

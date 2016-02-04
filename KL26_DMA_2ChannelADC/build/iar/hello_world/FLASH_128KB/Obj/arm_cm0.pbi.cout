@@ -1,74 +1,74 @@
-"C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\cpu\arm_cm0.c"
+"D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\cpu\arm_cm0.c"
 -std=c99
 -ferror-limit=100
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\projects\hello_world
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\projects\hello_world
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\common
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\common
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu\headers
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\cpu\headers
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\llwu
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\llwu
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\lptmr
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\lptmr
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\mcg
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\mcg
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\pmc
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\pmc
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rcm
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rcm
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rtc
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\rtc
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\smc
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\smc
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\uart
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\uart
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\wdog
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\wdog
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\cmp
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\drivers\cmp
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\platforms
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..\..\..\src\platforms
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar\hello_world\..
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar\hello_world\..
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc
 -I
 C:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\arm\inc\c
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\projects\hello_world
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\projects\hello_world
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\common
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\common
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\cpu
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\cpu
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\cpu\headers
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\cpu\headers
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\drivers\llwu
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\drivers\llwu
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\drivers\lptmr
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\drivers\lptmr
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\drivers\mcg
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\drivers\mcg
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\drivers\pmc
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\drivers\pmc
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\drivers\rcm
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\drivers\rcm
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\drivers\rtc
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\drivers\rtc
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\drivers\smc
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\drivers\smc
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\drivers\uart
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\drivers\uart
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\drivers\wdog
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\drivers\wdog
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\drivers\cmp
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\drivers\cmp
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\src\platforms
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\src\platforms
 -I
-C:\Users\b51443\Desktop\jicheng dma\KL26_DMA_2ChannelADC\build\iar
+D:\jicheng_dma_adc\KL26_DMA_2ChannelADC\build\iar
 -DIAR=1
 -DFREEDOM=1
 -D__CHAR_BITS__=8
